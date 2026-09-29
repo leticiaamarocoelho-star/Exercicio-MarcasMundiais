@@ -1,12 +1,12 @@
 import ServiceMarca from '../service/marca.js'
 
-class ControllerPessoa {
+class ControllerMarca {
 
     Buscar(req, res) {
         try {
-            const nomes = ServicePessoa.Buscar()
+            const marcas = ServiceMarca.Buscar()
             
-            res.send({ nomes })
+            res.send({ marcas })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
         }
@@ -16,8 +16,8 @@ class ControllerPessoa {
     BuscarUm(req, res) {
         try {
             const id = req.params.id
-            const nome = ServicePessoa.BuscarUm(id)
-            res.send({ nome })
+            const marca = ServiceMarca.BuscarUm(id)
+            res.send({ marca })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
         }
@@ -26,8 +26,8 @@ class ControllerPessoa {
 
     Criar(req, res) {
         try {
-            const nome = req.body.nome
-            ServicePessoa.Criar(nome)
+            const marca = req.body.marca
+            ServiceMarca.Criar(marca)
 
             res.send({ message: "Criado com sucesso!" })
         } catch (error) {
@@ -39,9 +39,9 @@ class ControllerPessoa {
     Alterar(req, res) {
         try {
             const id = req.params.id
-            const nome = req.body.nome
+            const marca = req.body.marca
 
-            ServicePessoa.Alterar(id, nome)
+            ServiceMarca.Alterar(id, marca)
             res.send({ message: "Alterado com sucesso!" })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
@@ -53,7 +53,7 @@ class ControllerPessoa {
         try {
             const id = req.params.id
 
-            ServicePessoa.Deletar(id)
+            ServiceMarca.Deletar(id)
             res.send({ message: "Deletado com sucesso!" })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
@@ -63,4 +63,4 @@ class ControllerPessoa {
     
 }
 
-export default new ControllerPessoa()
+export default new ControllerMarca()

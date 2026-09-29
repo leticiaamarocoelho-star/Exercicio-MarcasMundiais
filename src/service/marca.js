@@ -1,9 +1,9 @@
-import Pessoa from '../model/pessoa.js'
+import Marca from '../model/marca.js'
 
-class ServicePessoa {
+class ServiceMarca {
 
     Buscar() {
-        return Pessoa.Buscar()
+        return Marca.Buscar()
     }
 
 
@@ -11,23 +11,23 @@ class ServicePessoa {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar somente números")
         }
-        return Pessoa.Buscar(id)
+        return Marca.BuscarUm(id)
     }
 
 
-    Criar(nome) {
-        if(nome) {
+    Criar(marca) {
+        if(!marca) {
             throw new Error("Favor informar nome")
         }
-        Pessoa.Criar(nome)
+        Marca.Criar(marca)
     }
 
 
-    Alterar(id, nome) {
-        if(!id || isNaN(id) || !nome) {
+    Alterar(id, marca) {
+        if(!id || isNaN(id) || !marca) {
             throw new Error("Favor informar todos os dados")
         }
-        Pessoa.Alterar(id, nome)
+        Marca.Alterar(id, marca)
     }
 
 
@@ -35,9 +35,9 @@ class ServicePessoa {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar o ID corretamente")
         }
-        Pessoa.Deletar(id)
+        Marca.Deletar(id)
     }
 
 }
 
-export default new ServicePessoa()
+export default new ServiceMarca()
