@@ -1,10 +1,10 @@
 import ServiceMarca from '../service/marca.js'
 
-class ControllerPessoa {
+class ControllerMarca {
 
     Buscar(req, res) {
         try {
-            const nomes = ServicePessoa.Buscar()
+            const nomes = ServiceMarca.Buscar()
             
             res.send({ nomes })
         } catch (error) {
@@ -16,7 +16,7 @@ class ControllerPessoa {
     BuscarUm(req, res) {
         try {
             const id = req.params.id
-            const nome = ServicePessoa.BuscarUm(id)
+            const nome = ServiceMarca.BuscarUm(id)
             res.send({ nome })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
@@ -27,7 +27,7 @@ class ControllerPessoa {
     Criar(req, res) {
         try {
             const nome = req.body.nome
-            ServicePessoa.Criar(nome)
+            ServiceMarca.Criar(nome)
 
             res.send({ message: "Criado com sucesso!" })
         } catch (error) {
@@ -41,7 +41,7 @@ class ControllerPessoa {
             const id = req.params.id
             const nome = req.body.nome
 
-            ServicePessoa.Alterar(id, nome)
+            ServiceMarca.Alterar(id, nome)
             res.send({ message: "Alterado com sucesso!" })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
@@ -53,7 +53,7 @@ class ControllerPessoa {
         try {
             const id = req.params.id
 
-            ServicePessoa.Deletar(id)
+            ServiceMarca.Deletar(id)
             res.send({ message: "Deletado com sucesso!" })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
@@ -63,4 +63,4 @@ class ControllerPessoa {
     
 }
 
-export default new ControllerPessoa()
+export default new ControllerMarca()
