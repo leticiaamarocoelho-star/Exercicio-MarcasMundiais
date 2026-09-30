@@ -4,9 +4,9 @@ class ControllerMarca {
 
     Buscar(req, res) {
         try {
-            const nomes = ServiceMarca.Buscar()
+            const marcas = ServiceMarca.Buscar()
             
-            res.send({ nomes })
+            res.send({ marcas })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
         }
@@ -16,8 +16,8 @@ class ControllerMarca {
     BuscarUm(req, res) {
         try {
             const id = req.params.id
-            const nome = ServiceMarca.BuscarUm(id)
-            res.send({ nome })
+            const marca = ServiceMarca.BuscarUm(id)
+            res.send({ marca })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
         }
@@ -26,8 +26,8 @@ class ControllerMarca {
 
     Criar(req, res) {
         try {
-            const nome = req.body.nome
-            ServiceMarca.Criar(nome)
+            const marca = req.body.marca
+            ServiceMarca.Criar(marca)
 
             res.send({ message: "Criado com sucesso!" })
         } catch (error) {
@@ -39,9 +39,9 @@ class ControllerMarca {
     Alterar(req, res) {
         try {
             const id = req.params.id
-            const nome = req.body.nome
+            const marca = req.body.marca
 
-            ServiceMarca.Alterar(id, nome)
+            ServiceMarca.Alterar(id, marca)
             res.send({ message: "Alterado com sucesso!" })
         } catch (error) {
             res.send({ menssagem: error.menssagem })

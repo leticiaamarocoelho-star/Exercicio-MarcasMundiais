@@ -1,31 +1,31 @@
-const nomes = new Array("Ana", "Batata", "João")
+const marcas = new Array("Ana", "Batata", "João")
 
-class Pessoa {
+class Marca {
 
     Buscar() {
-        return nomes
+        return marcas
     }
     
 
     BuscarUm(id) {
-        return nomes[id]
+        return marcas[id]
     }
 
 
-    Criar (nome) {
-        nomes.push(nome)
+    Criar (marca) {
+        marcas.push(marca)
     }
 
 
-    Alterar (id, nome) {
-        nomes[id] = nome
+    Alterar (id, marca) {
+        marcas[id] = marca
     }
 
 
     Deletar(id) {
-        nomes.splice(id, 2)
+        marcas.splice(id, 1)
     }
     
 }
 
-export default new Pessoa ()
+export default new Marca ()
