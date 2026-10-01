@@ -1,12 +1,12 @@
-import ServiceMarca from '../service/marca.js'
+import ServiceCachorro from '../service/cachorro.js'
 
-class ControllerMarca {
+class ControllerCachorro {
 
     Buscar(req, res) {
         try {
-            const marcas = ServiceMarca.Buscar()
+            const racas = ServiceCachorro.Buscar()
             
-            res.send({ marcas })
+            res.send({ racas })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
         }
@@ -16,8 +16,8 @@ class ControllerMarca {
     BuscarUm(req, res) {
         try {
             const id = req.params.id
-            const marca = ServiceMarca.BuscarUm(id)
-            res.send({ marca })
+            const cachorro = ServiceCachorro.BuscarUm(id)
+            res.send({ cachorro })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
         }
@@ -26,8 +26,8 @@ class ControllerMarca {
 
     Criar(req, res) {
         try {
-            const marca = req.body.marca
-            ServiceMarca.Criar(marca)
+            const cachorro = req.body.cachorro
+            ServiceCachorro.Criar(cachorro)
 
             res.send({ message: "Criado com sucesso!" })
         } catch (error) {
@@ -39,9 +39,9 @@ class ControllerMarca {
     Alterar(req, res) {
         try {
             const id = req.params.id
-            const marca = req.body.marca
+            const cachorro = req.body.cachorro
 
-            ServiceMarca.Alterar(id, marca)
+            ServiceCachorro.Alterar(id, cachorro)
             res.send({ message: "Alterado com sucesso!" })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
@@ -63,4 +63,4 @@ class ControllerMarca {
     
 }
 
-export default new ControllerMarca()
+export default new ControllerCachorro()

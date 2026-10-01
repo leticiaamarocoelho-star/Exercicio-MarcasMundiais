@@ -1,5 +1,5 @@
 import express from 'express'
-import router from './src/router/exercicio.js'
+import router from './src/router/cachorro.js'
 
 const app = express()
 app.use(express.json()) 

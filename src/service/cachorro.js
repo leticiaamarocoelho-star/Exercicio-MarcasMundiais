@@ -1,9 +1,9 @@
-import Marca from '../model/marca.js'
+import Cachorro from '../model/cachorro.js'
 
-class ServiceMarca {
+class ServiceCachorro {
 
     Buscar() {
-        return Marca.Buscar()
+        return Cachorro.Buscar()
     }
 
 
@@ -11,23 +11,23 @@ class ServiceMarca {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar somente números")
         }
-        return Marca.BuscarUm(id)
+        return Cachorro.BuscarUm(id)
     }
 
 
-    Criar(marca) {
-        if(!marca) {
+    Criar(cachorro) {
+        if(!cachorro) {
             throw new Error("Favor informar nome")
         }
-        Marca.Criar(marca)
+        Cachorro.Criar(cachorro)
     }
 
 
-    Alterar(id, marca) {
-        if(!id || isNaN(id) || !marca) {
+    Alterar(id, cachorro) {
+        if(!id || isNaN(id) || !cachorro) {
             throw new Error("Favor informar todos os dados")
         }
-        Marca.Alterar(id, marca)
+        Cachorro.Alterar(id, cachorro)
     }
 
 
@@ -35,9 +35,9 @@ class ServiceMarca {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar o ID corretamente")
         }
-        Marca.Deletar(id)
+        Cachorro.Deletar(id)
     }
 
 }
 
-export default new ServiceMarca()
+export default new ServiceCachorro()
