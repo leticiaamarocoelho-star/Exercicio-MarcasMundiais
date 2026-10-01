@@ -26,8 +26,8 @@ class Cachorro {
     }
 
 
-    Alterar (id, cachorro) {
-        racas[id] = cachorro//
+    Alterar (id, nome, idade) {
+        racas[id].nome = nome
     }
 
 
